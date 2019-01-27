@@ -11,6 +11,8 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 import 'bootstrap/dist/css/bootstrap.css';
 import './style/main.scss';
 
+import '@fortawesome/fontawesome-free';
+
 function main() {
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>

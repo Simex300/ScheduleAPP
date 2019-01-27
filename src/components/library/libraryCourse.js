@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import Icon from '../Icon';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+// Icons
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+
+library.add( faCheck );
+
 class LibraryCourse extends Component {
     render() {
         return (
             <div className="library-course">
                 <label className="library-course__title">Problem Solving</label>
+                {/* <FontAwesomeIcon icon={['fas', 'check']}/> */}
                 { Icon("fas fa-check", "library-course__icon") }
                 {/* Arrow Component */}
                 {/* Action Btn Component */}
