@@ -5,6 +5,10 @@ html {
     font-size: 62.5%; // 1rem is 10px
 }
 
+i {
+    font-family: "Font Awesome 5 Free" !important;
+}
+
 *,
 *::after,
 *::before {
@@ -23,8 +27,6 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
 }
-
-
 
 .app {
     margin-top: 2rem;

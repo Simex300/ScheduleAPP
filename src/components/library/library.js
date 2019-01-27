@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import libraryCourse from './libraryCoruse';
-import LibraryCourse from './libraryCoruse';
+import LibraryCourse from './libraryCourse';
 
 class Library extends Component {
     render() {
