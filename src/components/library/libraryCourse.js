@@ -13,7 +13,6 @@ class LibraryCourse extends Component {
         return (
             <div className="library-course">
                 <label className="library-course__title">Problem Solving</label>
-                {/* <FontAwesomeIcon icon={['fas', 'check']}/> */}
                 { Icon("fas fa-check", "library-course__icon") }
                 {/* Arrow Component */}
                 {/* Action Btn Component */}
