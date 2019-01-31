@@ -25,7 +25,7 @@ class LibraryCourse extends Component {
     }
     
     toggleDescription = function(status){
-        let height = this.state.height == 0 ? 100 : 0;
+        let height = this.state.height == 0 ? 'auto' : 0;
         if(!status) {
             document.getElementById(this.id).classList.add('library-course-selected');
         }
@@ -40,10 +40,9 @@ class LibraryCourse extends Component {
         return (
             <div id={this.id} className="library-course">
                 <div className="library-course__title-check">
-                    <label className="library-course__title">{this.props.title}</label>
+                    <div className="library-course__title">{this.props.title}</div>
                     { Icon("fas fa-check", "library-course__icon") }
                 </div>
-                <div className='library-course__line'></div>
                 <Arrow callback={(status) => this.toggleDescription(status)} id={this.props.id} className="library-course__arrow" />
                 <Action id={this.props.id} onClick={() => this.props.toggleEnrolled(this.props.id)} enrolled={this.props.enrolled} className="library-course__action" />
                 <AnimateHeight duration={300} height={this.state.height}>

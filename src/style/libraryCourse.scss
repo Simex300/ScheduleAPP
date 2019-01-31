@@ -1,7 +1,7 @@
 .library-course {
     display: grid;
     grid-template-columns: 1fr 45px 58px;
-    grid-template-rows: 32px [line-s] 20px [line-e] 1fr;
+    grid-template-rows: 32px 1fr;
 
     align-items: center;
     
@@ -10,13 +10,7 @@
         display: flex;
         grid-column: 1;
     }
-    
-    &__line{
-        grid-column: 1/-1;
-        grid-row: line-s/line-e;
-        padding-top: 19px;
-    }
-    
+
     &__arrow{
         grid-row: 1/2;
         grid-column: 2;
@@ -25,12 +19,13 @@
     &__action {
         grid-row: 1/2;
         grid-column: 3;
-        
         justify-self: center;
+        opacity: 0;
+        transition: all .3s ease;
     }
     
     &__description{
-        grid-row: 3/4;
+        grid-row: 2/3;
         grid-column: 1/-1;
         padding-top: 24px;
     }
@@ -50,23 +45,22 @@
     padding-left: 25px;
     padding-top: 12px;
     padding-bottom: 12px;
+
+    z-index: 2;
     
     &:hover {
         @include solid-course();
+        .library-course__action{
+            opacity: 1;
+        }
     }
-    
+
     &__title {
         color: $color-gray;
         font-family: $font-lato;
         font-size: 18px;
         line-height: 22px;
         
-    }
-    
-    &__line {
-        border-bottom: 1px solid #f2f2f2;
-        margin-top: 19px;
-        margin-bottom: 24px;
     }
     
     &__icon {
@@ -76,6 +70,8 @@
     }
     
     &__description {
+        margin-top: 19px;
+        border-top: 1px solid #f2f2f2;
         label {
             color: $color-blue;
             font-family: $font-alegreya;

@@ -6,6 +6,7 @@
 @import 'scheduleCourse';
 @import 'tracker';
 @import 'addRemoveAction';
+@import 'gradient';
 
 html {
     font-size: 62.5%; // 1rem is 10px
@@ -41,29 +42,6 @@ body {
     width: 100vw;
 
     display: grid;
-    grid-template-columns: [library-s] 1fr 1fr [library-e schedule-s] 1fr [schedule-e];
+    grid-template-columns: [library-s] 1fr 1fr [schedule-s] 50px [library-e] 1fr [schedule-e];
     grid-template-rows: 1fr;
-}
-
-.library{
-    grid-column: library-s/library-e;
-    padding-left: 100px;
-    padding-top: 100px;
-
-    margin-right: -50px;
-}
-
-.schedule{
-    grid-column: schedule-s/schedule-e;
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
-.gradient{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: -10;
-    background: linear-gradient(120deg, $color-purple 0%, $color-light-blue 100%);
 }
