@@ -13,6 +13,29 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 library.add( faCheck );
 
 class LibraryCourse extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            status: true
+        }
+    }
+
+    renderDescription = function() {
+        if(!this.state.status){
+            return (
+                <div className="library-course__description">
+                    <label>Course Description</label>
+                    <p>{this.props.description}</p>
+                </div>
+            );
+        }
+    }.bind(this);
+
+    toggleDescription = function(status){
+        this.setState({ status });
+    }.bind(this);
+
     render() {
         return (
             <div className="library-course">
@@ -20,12 +43,10 @@ class LibraryCourse extends Component {
                     <label className="library-course__title">{this.props.title}</label>
                     { Icon("fas fa-check", "library-course__icon") }
                 </div>
-                <Arrow className="library-course__arrow" />
+                <div className='library-course__line'></div>
+                <Arrow callback={(status) => this.toggleDescription(status)} id={this.props.id} className="library-course__arrow" />
                 <Action onClick={() => this.props.toggleEnrolled(this.props.id)} enrolled={this.props.enrolled} className="library-course__action" />
-                <div className="library-course__description">
-                    <label>Course Description</label>
-                    <p>{this.props.description}</p>
-                </div>
+                {this.renderDescription()}
             </div>
         )
     }
