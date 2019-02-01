@@ -8,7 +8,7 @@ class Tracker extends Component {
     render() {
         return(
             <div className='tracker'>
-                <label className='tracker__label'>Progress Tracker</label>
+                <div className='tracker__title'>Progress Tracker</div>
                 <div className='tracker__percentage'>
                     {this.calculateProgress()}%
                 </div>
