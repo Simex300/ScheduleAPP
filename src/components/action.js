@@ -9,22 +9,27 @@ class Action extends Component {
     }
 
     handleAction = function(){
-        this.props.onClick();
-        if(!this.status){
-            document.getElementById(this.id).classList.add('action-remove');
+        if(this.props.id !== "none"){
+            this.props.onClick();
+            if(!this.status){
+                document.getElementById(this.id).classList.add('action-remove');
+            }
+            else{
+                document.getElementById(this.id).classList.remove('action-remove');
+            }
+            this.status = !this.status;
         }
-        else{
-            document.getElementById(this.id).classList.remove('action-remove');
-        }
-        this.status = !this.status;
     }.bind(this);
 
     render(){
         this.id = `action-${this.props.id}`;
         return (
+            this.props.id !== "none" ? 
             <a id={this.id} onClick={() => this.handleAction()} className={`${this.props.className} action`}>
                 
             </a>
+            :
+            ''
         )
     }
 }

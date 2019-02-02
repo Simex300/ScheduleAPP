@@ -2,11 +2,14 @@
     grid-column: library-s/library-e;
     grid-row: 1/-1;
 
-    overflow: hidden;
     width: 100%;
     height: 100%;
     
+    overflow: hidden;
     overflow-y: scroll;
+
+    &::-webkit-scrollbar { width: 0 }
+    -ms-overflow-style: none;
 
     padding-right: 50%; /* Put the scroll bar off screen */ 
     box-sizing: content-box;
@@ -16,6 +19,7 @@
         grid-template-rows: [title-s] 100px [title-e courses-s] repeat(auto-fit, 1fr) [courses-e];
         grid-row-gap: 22px;
         
+        height: 100px;
         padding-top: 7%;
         padding-left: 5%;
         padding-bottom: 76px;
@@ -31,4 +35,3 @@
 
     }
 }
-

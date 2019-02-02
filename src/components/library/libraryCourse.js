@@ -25,14 +25,16 @@ class LibraryCourse extends Component {
     }
     
     toggleDescription = function(status){
-        let height = this.state.height == 0 ? 'auto' : 0;
-        if(!status) {
-            document.getElementById(this.id).classList.add('library-course-selected');
+        if(this.props.id !== "none"){
+            let height = this.state.height == 0 ? 'auto' : 0;
+            if(!status) {
+                document.getElementById(this.id).classList.add('library-course-selected');
+            }
+            else{
+                document.getElementById(this.id).classList.remove('library-course-selected');
+            }
+            this.setState({ status, height });
         }
-        else{
-            document.getElementById(this.id).classList.remove('library-course-selected');
-        }
-        this.setState({ status, height });
     }.bind(this);
 
     render() {
