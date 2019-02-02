@@ -67,8 +67,17 @@
         color: $color-blue;
         padding-left: 16px;
         font-size: 24px;
+        
     }
     
+    &__icon-display{
+        opacity: 1;
+    }
+
+    &__icon-display.hidden{
+        opacity: 0;
+    }
+
     &__description {
         margin-top: 19px;
         border-top: 1px solid #f2f2f2;

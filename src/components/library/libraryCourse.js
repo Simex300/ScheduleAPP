@@ -41,7 +41,9 @@ class LibraryCourse extends Component {
             <div id={this.id} className="library-course">
                 <div className="library-course__title-check">
                     <div className="library-course__title">{this.props.title}</div>
-                    { this.props.enrolled ? Icon("fas fa-check", "library-course__icon") : '' }
+                    <div className={`library-course__icon-display ${!this.props.enrolled ? 'hidden' : ''}`}>
+                        { Icon("fas fa-check", `library-course__icon`) }
+                    </div>
                 </div>
                 <Arrow callback={(status) => this.toggleDescription(status)} id={this.props.id} className="library-course__arrow" />
                 <Action id={this.props.id} onClick={() => this.props.toggleEnrolled(this.props.id)} enrolled={this.props.enrolled} className={`library-course__action ${this.props.enrolled ? 'action-remove' : ''}`} />
