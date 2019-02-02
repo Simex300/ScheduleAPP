@@ -6,14 +6,13 @@
     width: 100%;
 
     display: grid;
-    grid-template-rows: [space-one-s] 1fr [space-one-e title-s] 100px [title-e course-s] repeat(5, 80px) [course-e progress-s] 1fr [progress-e];
+    grid-template-rows: [space-one-s] 1fr [space-one-e] repeat(5, 80px) [progress-s] 1fr [progress-e];
     grid-row-gap: 22px;
     align-items: center;
     justify-items: center;
     align-content: center;
 
     &__title {
-        grid-row: title-s/title-e;
         color: white;
         font-family: $font-alegreya;
         font-size: 20px;
